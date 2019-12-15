@@ -3,6 +3,8 @@
     <div class="container">
       <h2 class="subtitle">e-learning project v2</h2>
       <div class="links">
+        <h1>Go to courses page</h1>
+        <nuxt-link to="/courses">Courses</nuxt-link>
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
         <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
       </div>
