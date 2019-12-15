@@ -1,0 +1,16 @@
+{
+  "info": {
+    "name": "unit_materials",
+    "description": ""
+  },
+  "connection": "default",
+  "collectionName": "groups_unit_materials",
+  "attributes": {
+    "unit_materials": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

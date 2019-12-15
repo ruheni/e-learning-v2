@@ -1,0 +1,31 @@
+{
+  "connection": "default",
+  "collectionName": "units",
+  "info": {
+    "name": "unit",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "unit_name": {
+      "required": true,
+      "type": "string"
+    },
+    "unit_materials": {
+      "group": "unit_materials",
+      "repeatable": true,
+      "type": "group"
+    },
+    "courses": {
+      "collection": "course",
+      "via": "units"
+    }
+  }
+}
