@@ -11,6 +11,9 @@
       "via": "related",
       "plugin": "upload",
       "required": false
+    },
+    "unit_doc_description": {
+      "type": "text"
     }
   }
 }

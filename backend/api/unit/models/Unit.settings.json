@@ -26,6 +26,9 @@
     "courses": {
       "collection": "course",
       "via": "units"
+    },
+    "unit_description": {
+      "type": "text"
     }
   }
 }

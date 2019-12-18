@@ -1,5 +1,4 @@
 import Cookies from 'js-cookie'
-
 // Define empty state 
 export const state = () => { }
 
@@ -16,7 +15,6 @@ export const mutations = {
         this.$router.redirect('/')
     }
 }
-
 // getter to get username from state
 export const getters = {
     username: state => {

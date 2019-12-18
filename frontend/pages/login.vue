@@ -1,5 +1,5 @@
 <template>
-  <div class="form">
+  <div class="form page">
     <h3>Login</h3>
     <b-form @submit.stop.prevent="login">
       <!-- username -->
@@ -26,6 +26,9 @@
     </b-form>
   </div>
 </template>
+
+
+
 <script>
 import { mapMutations } from 'vuex'
 import strapi from '~/utils/Strapi'
@@ -35,22 +38,24 @@ export default {
     return { email: '', password: '', loading: false }
   },
   methods: {
-    async login() {
+    async login(e) {
+      e.preventDefault()
       try {
         this.loading = true
         const response = await strapi.login(this.email, this.password)
         this.loading = false
         this.setUser(response.user)
-        this.$router.push('/')
+        this.$router.push('/courses')
       } catch (error) {
         this.loading = false
         alert(error.messsage || 'An error occured')
+        console.log(error.message)
       }
-    }
-  },
-  ...mapMutations({
-    setUser: 'auth/setUser'
-  })
+    },
+    ...mapMutations({
+      setUser: 'auth/setUser'
+    })
+  }
 }
 </script>
 <style scoped>
@@ -58,5 +63,8 @@ export default {
   max-width: 700px;
   margin: auto;
   margin-top: 50px;
+}
+.page {
+  padding: 20px;
 }
 </style>

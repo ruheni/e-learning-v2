@@ -59,6 +59,10 @@
     "isStudent": {
       "default": true,
       "type": "boolean"
+    },
+    "course": {
+      "model": "course",
+      "via": "user"
     }
   }
 }

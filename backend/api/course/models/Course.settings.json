@@ -19,10 +19,18 @@
       "required": true,
       "type": "string"
     },
+    "course_description": {
+      "type": "text"
+    },
     "units": {
       "collection": "unit",
-      "via": "courses",
-      "dominant": true
+      "dominant": true,
+      "via": "courses"
+    },
+    "user": {
+      "model": "user",
+      "via": "course",
+      "plugin": "users-permissions"
     }
   }
 }

@@ -1,12 +1,9 @@
 <template>
   <div>
     <div class="container">
-      <h2 class="subtitle">e-learning project v2</h2>
       <div class="links">
-        <h1>Go to courses page</h1>
-        <nuxt-link to="/courses">Courses</nuxt-link>
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
+        <h1></h1>
+        <nuxt-link to="/courses">Go to courses page</nuxt-link>
       </div>
     </div>
   </div>
@@ -18,7 +15,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   margin: 0 auto;
   min-height: 100vh;

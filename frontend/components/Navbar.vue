@@ -8,14 +8,13 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <!-- Using 'button-content' slot -->
-        <template v-if="username" v-slot:button-content>
+        <b-nav-item v-if="username">
           <em>Hello {{ username }}</em>
-        </template>
+        </b-nav-item>
 
         <b-nav-item to="/courses">Courses</b-nav-item>
         <b-nav-item v-if="!username" to="/login">Login</b-nav-item>
         <b-nav-item v-if="username" @click="logout">Sign Out</b-nav-item>
-        <!-- </b-nav-item-dropdown> -->
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>

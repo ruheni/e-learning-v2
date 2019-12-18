@@ -15,6 +15,7 @@
 </template>
 <script>
 export default {
+  middleware: 'notAuthenticated',
   data() {
     return {
       courses: [],
@@ -46,5 +47,10 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 30px;
   margin: 50px 20px;
+}
+.card {
+  border-radius: 5px;
+  height: 200px;
+  display: flex;
 }
 </style>
