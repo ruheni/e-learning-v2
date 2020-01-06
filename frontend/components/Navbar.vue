@@ -13,6 +13,7 @@
         </b-nav-item>
 
         <b-nav-item to="/courses">Courses</b-nav-item>
+        <b-nav-item v-if="!username" to="/register">Sign Up</b-nav-item>
         <b-nav-item v-if="!username" to="/login">Login</b-nav-item>
         <b-nav-item v-if="username" @click="logout">Sign Out</b-nav-item>
       </b-navbar-nav>

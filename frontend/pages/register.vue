@@ -1,7 +1,17 @@
 <template>
   <div class="form page">
-    <h3>Login</h3>
-    <b-form @submit.stop.prevent="login">
+    <h3>Register</h3>
+    <b-form @submit.stop.prevent="handleSubmit">
+      <!-- username -->
+      <b-form-group id="username" label="Username:" label-for="username">
+        <b-form-input
+          id="username"
+          v-model="username"
+          type="text"
+          required
+          placeholder="Your username here"
+        ></b-form-input>
+      </b-form-group>
       <!-- email -->
       <b-form-group id="email" label="Email address:" label-for="email">
         <b-form-input
@@ -26,30 +36,34 @@
     </b-form>
   </div>
 </template>
-
-
-
 <script>
 import { mapMutations } from 'vuex'
 import strapi from '~/utils/Strapi'
 
 export default {
   data() {
-    return { email: '', password: '', loading: false }
+    return {
+      email: '',
+      password: '',
+      username: '',
+      loading: ''
+    }
   },
   methods: {
-    async login(e) {
-      e.preventDefault()
+    async handleSubmit() {
       try {
         this.loading = true
-        const response = await strapi.login(this.email, this.password)
+        const response = await strapi.register(
+          this.username,
+          this.email,
+          this.password
+        )
         this.loading = false
         this.setUser(response.user)
         this.$router.push('/courses')
       } catch (error) {
         this.loading = false
-        alert(error.messsage || 'An error occured')
-        console.log(error.message)
+        alert(error.message | 'An error occurred.')
       }
     },
     ...mapMutations({

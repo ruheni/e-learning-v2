@@ -12,7 +12,7 @@ export const mutations = {
     logout(state) {
         state.user = null
         Cookies.set('user', null)
-        this.$router.redirect('/')
+        this.$router.push('/')
     }
 }
 // getter to get username from state
